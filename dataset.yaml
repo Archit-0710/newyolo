@@ -1,0 +1,18 @@
+# Define paths
+train_img_dir = '/content/drive/My Drive/dataset/train'
+val_img_dir = '/content/drive/My Drive/dataset/train'
+
+# Define number of classes and class names
+num_classes = 2  # Adjust based on your dataset
+class_names = ['high','low']  # Replace with your class names
+
+# Create the dataset.yaml file dynamically
+yaml_content = f"""
+train: {train_img_dir}
+val: {val_img_dir}
+nc: {num_classes}
+names: {class_names}
+"""
+
+with open('dataset.yaml', 'w') as f:
+    f.write(yaml_content)
